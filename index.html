@@ -29,12 +29,31 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container my-5 text-center">
-        <div class="p-5 bg-white rounded shadow-sm">
+    <!-- Main Content with Live Search Feature -->
+    <div class="container my-5">
+        <div class="p-5 bg-white rounded shadow-sm text-center mb-4">
             <h1 class="display-4 fw-bold text-success">Premium Milling & Quality Grains</h1>
             <p class="lead mt-3">Welcome to Siirwa Millers. We source and mill the finest grains for artisans and households alike.</p>
-            <a href="about.html" class="btn btn-success btn-lg mt-4">Learn Our Story</a>
+        </div>
+
+        <!-- Live Search Input -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <input type="text" id="grainSearch" class="form-control form-control-lg" placeholder="Search grains (e.g., Baker's, Whole Wheat, Millet)...">
+            </div>
+        </div>
+
+        <!-- Catalog Items to Filter -->
+        <div class="row text-center" id="grainCatalog">
+            <div class="col-md-4 mb-3 grain-card" data-name="bakers flour">
+                <div class="card p-3 shadow-sm"><h5>Premium Baker's Flour</h5><p class="text-muted">High-protein for perfect artisanal loaves.</p></div>
+            </div>
+            <div class="col-md-4 mb-3 grain-card" data-name="whole wheat">
+                <div class="card p-3 shadow-sm"><h5>Stoneground Whole Wheat</h5><p class="text-muted">100% nutrient-dense traditional meal.</p></div>
+            </div>
+            <div class="col-md-4 mb-3 grain-card" data-name="millet grain">
+                <div class="card p-3 shadow-sm"><h5>Specialty Pearl Millet</h5><p class="text-muted">Gluten-free organic grain option.</p></div>
+            </div>
         </div>
     </div>
 
