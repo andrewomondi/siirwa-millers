@@ -42,5 +42,29 @@
             </form>
         </div>
     </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // Stop the form from refreshing the page automatically
+            event.preventDefault();
+
+            // Store form inputs into variables using DOM methods
+            let nameValue = document.getElementById('userName').value;
+            let emailValue = document.getElementById('userEmail').value;
+            let messageValue = document.getElementById('userMessage').value;
+            let alertContainer = document.getElementById('feedbackAlert');
+
+            // Standard conditional logic from your lecture slides
+            if (nameValue === "" || emailValue === "" || messageValue === "") {
+                // If any field is empty, inject a red error warning alert
+                alertContainer.innerHTML = '<div class="alert alert-danger fw-medium">Please fill out all fields before submitting the form.</div>';
+            } else {
+                // If all fields are valid, inject a green success alert
+                alertContainer.innerHTML = '<div class="alert alert-success fw-medium">Thank you! Your message was sent successfully.</div>';
+                
+                // Clear the input fields completely after successful submission
+                document.getElementById('contactForm').reset();
+            }
+        });
+    </script>
 </body>
 </html>
