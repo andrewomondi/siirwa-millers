@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siirwa Millers - Recipes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Siirwa Millers</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Products.html">Our Products</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="recipes.html">Baking Recipes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wholesale.html">Wholesale</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="p-5 bg-white rounded shadow-sm text-center mb-5">
+            <h2 class="fw-bold mb-3">Siirwa Test Kitchen</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                Discover how our stoneground, unbleached flour performs in classic baking configurations. Use our commercial calculator below to scale your bakery production accurately.
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4 feature-card">
+                    <h4 class="fw-bold text-success mb-3">Artisanal Loaf Scaler</h4>
+                    <p class="text-muted small">Enter the number of standard loaves you want to bake to dynamically calculate ingredient weight profiles based on a standard 65% hydration baker's matrix.</p>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Target Loaf Count:</label>
+                        <input type="number" id="loafInput" class="form-control" value="1" min="1" max="100">
+                    </div>
+
+                    <h5 class="fw-bold text-dark border-bottom pb-2">Required Ingredients:</h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Siirwa Baker's Flour: <span id="flourResult" class="fw-bold text-success">500g</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Pure Water (65% Hydration): <span id="waterResult" class="fw-bold text-success">325g</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Salt (2% Ratio): <span id="saltResult" class="fw-bold text-success">10g</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Instant Yeast (1.5% Ratio): <span id="yeastResult" class="fw-bold text-success">7.5g</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-white mt-5">
+        <p>&copy; 2026 Siirwa Millers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('loafInput').addEventListener('input', function() {
+            let loaves = parseInt(this.value);
+            
+            // If field is cleared or drop below 1, fall back gracefully
+            if (isNaN(loaves) || loaves < 1) {
+                loaves = 1;
+            }
+
+            // Calculation scaling parameters per loaf base weights
+            let baseFlour = 500;
+            let baseWater = 325;
+            let baseSalt = 10;
+            let baseYeast = 7.5;
+
+            // Injects recalculated values safely into display text components
+            document.getElementById('flourResult').innerText = (baseFlour * loaves) + 'g';
+            document.getElementById('waterResult').innerText = (baseWater * loaves) + 'g';
+            document.getElementById('saltResult').innerText = (baseSalt * loaves) + 'g';
+            document.getElementById('yeastResult').innerText = (baseYeast * loaves) + 'g';
+        });
+    </script>
+</body>
+</html>
