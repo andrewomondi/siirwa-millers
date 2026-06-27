@@ -1,0 +1,44 @@
+/* Custom Brand Theme for Siirwa Millers */
+
+:root {
+    --brand-green: #2c5e3b;
+    --brand-gold: #d4a373;
+    --brand-dark: #212529;
+    --brand-light: #f8f9fa;
+}
+
+/* Custom Navigation Styling */
+.navbar {
+    border-bottom: 3px solid var(--brand-gold);
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+    color: var(--brand-gold) !important;
+}
+
+/* Custom Buttons matching agriculture theme */
+.btn-success {
+    background-color: var(--brand-green) !important;
+    border-color: var(--brand-green) !important;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #1e4228 !important;
+    transform: translateY(-1px);
+}
+
+/* Coherent typography & accent cards */
+h2, h3 {
+    color: var(--brand-green);
+}
+
+.feature-card {
+    border-left: 4px solid var(--brand-gold) !important;
+}
+
+footer {
+    border-top: 3px solid var(--brand-gold);
+    background-color: var(--brand-dark);
+}
