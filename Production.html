@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siirwa Millers - Production</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Siirwa Millers</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Products.html">Our Products</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="production.html">Milling Yields</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wholesale.html">Wholesale</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="p-5 bg-white rounded shadow-sm text-center mb-5">
+            <h2 class="fw-bold mb-3">Industrial Extraction Performance</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                Our stoneground milling facility utilizes precise extraction parameters to maximize pure flour yield while isolating nutritious bran components.
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4 feature-card">
+                    <h4 class="fw-bold text-success mb-3">Grain Extraction Calculator</h4>
+                    <p class="text-muted small">Input raw crop intake weight (in kilograms) to estimate refined flour yield versus animal feed bran output based on our standard 78% extraction index.</p>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Raw Grain Intake (kg):</label>
+                        <input type="number" id="grainInput" class="form-control" value="1000" min="100" step="100">
+                    </div>
+
+                    <h5 class="fw-bold text-dark border-bottom pb-2">Estimated Yield Outputs:</h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Refined Unbleached Flour (78%): <span id="flourYield" class="fw-bold text-success">780 kg</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Coarse Bran Byproduct (18%): <span id="branYield" class="fw-bold text-success">180 kg</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Milling Moisture Loss (4%): <span id="lossYield" class="fw-bold text-danger">40 kg</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-white mt-5">
+        <p>&copy; 2026 Siirwa Millers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('grainInput').addEventListener('input', function() {
+            let rawWeight = parseFloat(this.value);
+            
+            if (isNaN(rawWeight) || rawWeight < 0) {
+                rawWeight = 0;
+            }
+
+            // Industrial milling breakdown metrics
+            let flourRatio = 0.78;
+            let branRatio = 0.18;
+            let lossRatio = 0.04;
+
+            // Update output targets dynamically
+            document.getElementById('flourYield').innerText = (rawWeight * flourRatio).toFixed(1) + ' kg';
+            document.getElementById('branYield').innerText = (rawWeight * branRatio).toFixed(1) + ' kg';
+            document.getElementById('lossYield').innerText = (rawWeight * lossRatio).toFixed(1) + ' kg';
+        });
+    </script>
+</body>
+</html>
