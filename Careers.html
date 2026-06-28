@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siirwa Millers - Careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Siirwa Millers</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Products.html">Our Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Production.html">Milling Yields</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Wholesale.html">Wholesale</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Sustainability.html">Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="p-5 bg-white rounded shadow-sm text-center mb-5">
+            <h2 class="fw-bold text-success mb-3">Join the Milling Operations Team</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 750px;">
+                Help us drive high-volume, sustainable food production. Discover our facility culture and find your place in industrial processing.
+            </p>
+        </div>
+
+        <h3 class="fw-bold text-dark mb-4 text-center">Life at Siirwa Millers</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm h-100 feature-card text-center">
+                    <h5 class="fw-bold text-success">Safety-First Plant</h5>
+                    <p class="text-muted small mb-0">We operate dust-controlled, modern stoneground processing environments built around high air-filtration safety metrics.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm h-100 feature-card text-center">
+                    <h5 class="fw-bold text-success">Grower Partnerships</h5>
+                    <p class="text-muted small mb-0">Our operations are linked straight to regional crop farmers, creating an equitable supply pipeline we can all be proud of.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded shadow-sm h-100 feature-card text-center">
+                    <h5 class="fw-bold text-success">Technical Advancement</h5>
+                    <p class="text-muted small mb-0">Get hands-on training with cutting-edge automated extraction machinery and enterprise quality analytics software.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <h4 class="fw-bold text-dark mb-4 border-bottom pb-2">Active Open Positions</h4>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-success mb-1">Milling Plant Operator</h6>
+                        <span class="badge bg-secondary mb-2">Full-Time | Plant Floor</span>
+                        <p class="text-muted small">Calibrate extraction parameters and manage crop feed rates to hit our targeted 78% flour processing index yields safely.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-success mb-1">Wholesale Logistics Coordinator</h6>
+                        <span class="badge bg-secondary mb-2">Full-Time | Logistics Desk</span>
+                        <p class="text-muted small">Coordinate large-scale freight schedules, manage silo tanker loading logs, and monitor B2B bulk pallet distributions.</p>
+                    </div>
+
+                    <div class="mb-2">
+                        <h6 class="fw-bold text-success mb-1">Quality Assurance Lab Analyst</h6>
+                        <span class="badge bg-secondary mb-2">Full-Time | Research Lab</span>
+                        <p class="text-muted small">Conduct routine grain incoming tests for protein structure density, moisture levels, and overall baking performance metrics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <h4 class="fw-bold text-dark mb-4 border-bottom pb-2">Express Application Portal</h4>
+                    
+                    <div id="jobAlert" class="mb-3"></div>
+
+                    <form id="jobForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Select Target Position</label>
+                            <select id="jobRole" class="form-select">
+                                <option value="">-- Choose Career Track --</option>
+                                <option value="Plant Operator">Milling Plant Operator</option>
+                                <option value="Logistics Coordinator">Wholesale Logistics Coordinator</option>
+                                <option value="Lab Analyst">Quality Assurance Lab Analyst</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" id="jobName" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" id="jobEmail" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 mt-3">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-white mt-5">
+        <p>&copy; 2026 Siirwa Millers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('jobForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let role = document.getElementById('jobRole').value;
+            let name = document.getElementById('jobName').value.trim();
+            let email = document.getElementById('jobEmail').value.trim();
+            let alertBox = document.getElementById('jobAlert');
+
+            if (role === "" || name === "" || email === "") {
+                alertBox.innerHTML = '<div class="alert alert-danger fw-medium small py-2">Please fill out all fields completely before submitting your application.</div>';
+            } else {
+                alertBox.innerHTML = `<div class="alert alert-success fw-medium small py-2">Success! Application logged for the <strong>${role}</strong> position. Our HR desk will follow up at <strong>${email}</strong>.</div>`;
+                document.getElementById('jobForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
