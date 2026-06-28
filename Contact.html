@@ -25,46 +25,80 @@
             </div>
         </div>
     </nav>
+
     <div class="container my-5">
-        <div class="p-5 bg-white rounded shadow-sm max-width-600 mx-auto">
-            <h2 class="fw-bold mb-4">Get In Touch</h2>
-            <form>
-                <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input type="text" class="form-control" placeholder="Your Name">
+        <div class="row g-4">
+            
+            <div class="col-md-5">
+                <div class="p-4 bg-white rounded shadow-sm h-100 feature-card">
+                    <h3 class="fw-bold text-success mb-3">Milling Operations</h3>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-dark mb-1">Plant Address:</h6>
+                        <p class="text-muted small mb-0">Plot 41, Industrial Area Bypass,<br>Grain Logistics Zone</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-dark mb-1">Operating Hours:</h6>
+                        <p class="text-muted small mb-0">Monday – Friday: 06:00 AM – 10:00 PM<br>Saturday: 08:00 AM – 04:00 PM</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-dark mb-1">Dedicated Sales & Logistics Desk:</h6>
+                        <p class="text-muted small mb-1"><strong>Procurement:</strong> sales@siirwamillers.com</p>
+                        <p class="text-muted small mb-0"><strong>Freight Dispatch:</strong> logistics@siirwamillers.com</p>
+                    </div>
+
+                    <div class="bg-light text-center py-4 rounded border">
+                        <span class="text-muted small fw-semibold">🗺️ Global Positioning Map Area</span>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Email address</label>
-                    <input type="email" class="form-control" placeholder="name@example.com">
+            </div>
+
+            <div class="col-md-7">
+                <div class="p-4 bg-white rounded shadow-sm h-100">
+                    <h3 class="fw-bold text-success mb-3">Commercial Inquiries</h3>
+                    
+                    <div id="feedbackAlert" class="mb-3"></div>
+
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Name</label>
+                            <input type="text" id="userName" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email address</label>
+                            <input type="email" id="userEmail" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Message</label>
+                            <textarea id="userMessage" class="form-control" rows="4" placeholder="Specify your specific volume requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Send Message</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Message</label>
-                    <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-dark w-100">Send Message</button>
-            </form>
+            </div>
+
         </div>
     </div>
+
+    <footer class="text-center py-4 bg-dark text-white mt-5">
+        <p>&copy; 2026 Siirwa Millers. All rights reserved.</p>
+    </footer>
+
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            // Stop the form from refreshing the page automatically
             event.preventDefault();
 
-            // Store form inputs into variables using DOM methods
-            let nameValue = document.getElementById('userName').value;
-            let emailValue = document.getElementById('userEmail').value;
-            let messageValue = document.getElementById('userMessage').value;
+            let nameValue = document.getElementById('userName').value.trim();
+            let emailValue = document.getElementById('userEmail').value.trim();
+            let messageValue = document.getElementById('userMessage').value.trim();
             let alertContainer = document.getElementById('feedbackAlert');
 
-            // Standard conditional logic from your lecture slides
             if (nameValue === "" || emailValue === "" || messageValue === "") {
-                // If any field is empty, inject a red error warning alert
-                alertContainer.innerHTML = '<div class="alert alert-danger fw-medium">Please fill out all fields before submitting the form.</div>';
+                alertContainer.innerHTML = '<div class="alert alert-danger fw-medium small py-2">Please fill out all fields before submitting your inquiry.</div>';
             } else {
-                // If all fields are valid, inject a green success alert
-                alertContainer.innerHTML = '<div class="alert alert-success fw-medium">Thank you! Your message was sent successfully.</div>';
-                
-                // Clear the input fields completely after successful submission
+                alertContainer.innerHTML = '<div class="alert alert-success fw-medium small py-2">Thank you! Your message was sent successfully.</div>';
                 document.getElementById('contactForm').reset();
             }
         });
